@@ -19,6 +19,8 @@ export const ListingTile = ({
   finance,
   monthly_payment,
 }: VehicleCard) => {
+  const images = media_urls.map((item) => item.thumb);
+  console.log("🚀 ~ images:", images);
   return (
     <div className="listing-tile">
       {name} {plate} {make} {model}
