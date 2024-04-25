@@ -2,12 +2,12 @@ import "./styles.scss";
 
 import type Props from "./types";
 
-export const ListingTag = ({ label, isFeature }: Props) => {
+export const ListingTag = ({ label, isCondition }: Props) => {
   return (
     <div
       aria-label={label}
       title={label}
-      className={`listing-tag ${isFeature && "listing-tag--featured"}`}
+      className={`listing-tag ${isCondition && "listing-tag--featured"}`}
     >
       {label}
     </div>

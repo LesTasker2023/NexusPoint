@@ -22,7 +22,12 @@ export const ListingTile = ({
   return (
     <div className="listing-tile">
       {name} {plate} {make} {model}
-      <ListingTag label={"40K"} isFeature={true} />
+      <ListingTag label={advert_classification} isCondition />
+      <ListingTag label={advert_classification} />
+      <ListingTag label={advert_classification} />
+      <ListingTag label={advert_classification} />
+      <ListingTag label={advert_classification} />
+      <ListingTag label={advert_classification} />
       <VehiclePrice
         price={price}
         original_price={original_price ? original_price : ""}
