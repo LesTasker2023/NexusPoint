@@ -16,7 +16,7 @@ export const ListingTile = ({
   return (
     <div className="listing-tile">
       {name} {plate} {make} {model}
-      <Tag label={"40K"} />
+      <Tag label={"40K"} isFeature={true} />
     </div>
   );
 };

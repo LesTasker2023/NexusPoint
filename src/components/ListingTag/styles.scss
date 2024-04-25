@@ -1,15 +1,30 @@
 @import "../../utils/styles/variables";
 @import "../../utils/styles/mixins";
+
+@mixin moddedStyle {
+  color: $white;
+  background-color: $np-grey;
+  border: 1px solid $white;
+  border-radius: 8px;
+  padding: 1px 10px 1px 10px;
+}
 .listing-tag {
   text-align: center;
   line-height: 18px;
   font-weight: 400;
   width: fit-content;
+  color: $np-light-grey;
+
   @include tablet {
-    color: $white;
-    background-color: $np-grey;
-    border: 1px solid $white;
-    border-radius: 8px;
-    padding: 1px 10px 1px 10px;
+    @include moddedStyle();
+  }
+
+  &--featured {
+    @include moddedStyle();
+
+    @include desktop {
+      font-size: 16px;
+      line-height: 27px;
+    }
   }
 }
