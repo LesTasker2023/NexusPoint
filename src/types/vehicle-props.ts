@@ -119,7 +119,7 @@ export interface Price {
 export interface MediaUrl {
   meta?: unknown[];
   large?: string;
-  thumb?: string;
+  thumb: string;
   medium?: string;
   hotspots?: unknown[];
   original?: string;
