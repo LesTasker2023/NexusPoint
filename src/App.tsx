@@ -13,6 +13,13 @@ function App() {
       advert_classification={data.data[0].advert_classification}
       fuel_type={data.data[0].fuel_type}
       transmission={data.data[0].transmission}
+      media_urls={data.data[0].media_urls}
+      price={data.data[0].price}
+      original_price={data.data[0].original_price}
+      // No data provided in mock response for the below props
+      // Hardcoded for visibility of the elements in the ListingTile
+      monthly_payment={(parseInt(data.data[0].price) / 48).toString()}
+      finance={"(PCP)"}
     />
   );
 }
