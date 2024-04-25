@@ -1,10 +1,17 @@
-@mixin tablet {
+@mixin mq-tablet {
   @media (min-width: 768px) {
     @content;
   }
 }
-@mixin desktop {
+@mixin mq-desktop {
   @media (min-width: 1440px) {
     @content;
   }
+}
+@mixin common-tag-style {
+  color: $white;
+  background-color: $np-grey;
+  border: 1px solid $white;
+  border-radius: 8px;
+  padding: 1px 10px 1px 10px;
 }

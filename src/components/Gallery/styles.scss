@@ -1,4 +1,10 @@
 .gallery {
   display: flex;
   overflow-x: scroll;
+  gap: 5px;
+  &__image {
+    height: 84px;
+    width: 113px;
+    border-radius: 16px;
+  }
 }
