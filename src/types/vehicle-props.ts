@@ -80,7 +80,7 @@ export interface Vehicle {
   media_urls?: MediaUrl[];
   original_media_urls?: string[];
   finance?: null;
-  monthly_payment?: null;
+  monthly_payment?: string;
   feature_classification?: unknown[][];
   extra_offers?: unknown[];
   wheelchair_aTechnicalPropertyess?: number;
@@ -102,6 +102,18 @@ export interface VehicleCard {
   advert_classification: string;
   fuel_type: string;
   transmission: string;
+  media_urls: MediaUrl[];
+  price: string;
+  original_price?: string;
+  monthly_payment: string;
+  finance: string;
+}
+
+export interface Price {
+  price: string;
+  original_price: string;
+  monthly_payment?: string;
+  finance?: string;
 }
 
 export interface MediaUrl {
