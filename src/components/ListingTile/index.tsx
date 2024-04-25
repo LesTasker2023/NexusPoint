@@ -1,8 +1,9 @@
 // #todo add alias in tsconfig
 import { VehicleCard } from "../../types/vehicle-props";
+import { Tag } from "../Tag";
 import "./styles.scss";
 
-export const Card = ({
+export const ListingTile = ({
   name,
   plate,
   make,
@@ -13,8 +14,9 @@ export const Card = ({
   transmission,
 }: VehicleCard) => {
   return (
-    <div className="card">
+    <div className="listing-tile">
       {name} {plate} {make} {model}
+      <Tag label={"40K"} />
     </div>
   );
 };
