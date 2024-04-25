@@ -1,6 +1,6 @@
 // #todo add alias in tsconfig
 import { VehicleCard } from "../../types/vehicle-props";
-import { Tag } from "../Tag";
+import { Tag } from "../ListingTag";
 import "./styles.scss";
 
 export const ListingTile = ({

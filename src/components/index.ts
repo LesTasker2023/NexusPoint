@@ -1,3 +1,3 @@
 export * from "./ListingTile";
-export * from "./Tag";
+export * from "./ListingTag";
 export * from "./ValuationTile";
