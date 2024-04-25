@@ -62,12 +62,12 @@ export interface Vehicle {
   site?: string;
   site_slug?: string;
   slug?: string;
-  standard_equipment?: Standardequipment;
+  standard_equipment?: StandardEquipment;
   status?: string;
   stock_id?: string;
   tags?: unknown[];
   tax_rate_value?: string;
-  technical_data?: Technicaldata;
+  technical_data?: TechnicalData;
   template_slug?: null;
   transmission?: string;
   vat?: string;
@@ -77,7 +77,7 @@ export interface Vehicle {
   vrm?: string;
   website_url?: string;
   year?: string;
-  media_urls?: Mediaurl[];
+  media_urls?: MediaUrl[];
   original_media_urls?: string[];
   finance?: null;
   monthly_payment?: null;
@@ -104,7 +104,7 @@ export interface VehicleCard {
   transmission: string;
 }
 
-export interface Mediaurl {
+export interface MediaUrl {
   meta?: unknown[];
   large?: string;
   thumb?: string;
@@ -113,7 +113,7 @@ export interface Mediaurl {
   original?: string;
 }
 
-export interface Technicaldata {
+export interface TechnicalData {
   TechnicalProperty?: TechnicalProperty;
   width?: TechnicalProperty;
   height?: TechnicalProperty;
@@ -145,6 +145,6 @@ export interface TechnicalProperty {
   category?: string;
 }
 
-export interface Standardequipment {
+export interface StandardEquipment {
   Standard?: string[];
 }
