@@ -107,6 +107,7 @@ export interface VehicleCard {
   original_price?: string;
   monthly_payment: string;
   finance: string;
+  slug: string;
 }
 
 export interface Price {
@@ -114,6 +115,7 @@ export interface Price {
   original_price: string;
   monthly_payment?: string;
   finance?: string;
+  slug: string;
 }
 
 export interface MediaUrl {

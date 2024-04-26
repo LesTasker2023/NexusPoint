@@ -22,6 +22,7 @@ function App() {
         .toFixed(2)
         .toString()}
       finance={"(PCP)"}
+      slug={vehicleDetails.slug}
     />
   );
 }

@@ -19,6 +19,7 @@ export const ListingTile = ({
   original_price,
   finance,
   monthly_payment,
+  slug,
 }: VehicleCard) => {
   const images = media_urls.map((item) => item.thumb);
   return (
@@ -42,6 +43,7 @@ export const ListingTile = ({
         original_price={original_price ? original_price : ""}
         finance={finance}
         monthly_payment={monthly_payment}
+        slug={slug}
       />
     </div>
   );
