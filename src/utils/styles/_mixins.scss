@@ -11,8 +11,9 @@
 }
 @mixin common-tag-style {
   color: $white;
+  text-transform: capitalize;
   background-color: $np-grey;
-  border: 1px solid $white;
+  border: 1px solid $np-border-grey;
   border-radius: 8px;
   padding: 1px 10px 1px 10px;
 }

@@ -9,7 +9,7 @@ export const ListingTag = ({ label, isCondition }: Props) => {
       title={label}
       className={`listing-tag ${isCondition && "listing-tag--featured"}`}
     >
-      {label}
+      {label.toLowerCase()}
     </div>
   );
 };

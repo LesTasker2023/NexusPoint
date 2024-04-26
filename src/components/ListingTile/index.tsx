@@ -20,31 +20,35 @@ export const ListingTile = ({
   finance,
   monthly_payment,
   slug,
+  seats,
 }: VehicleCard) => {
   const images = media_urls.map((item) => item.thumb);
   return (
     <div className="listing-tile">
       {images.length > 0 && <Gallery make={make} images={images} />}
-      <h3 className="listing-tile__title">{plate}</h3>
-      <ListingTag label={advert_classification} isCondition />
-      <div className="listing-tile__tags">
-        {/*
-         Assuming there would be an array of tags to be used in prod.
-         A ListingTags component would be built.
-         Chose to display a few predetermined props for visibility.
-        */}
-        <ListingTag label={advert_classification} />
-        <ListingTag label={advert_classification} />
-        <ListingTag label={advert_classification} />
-        <ListingTag label={advert_classification} />
+      <div className="listing-tile__details-container">
+        <h3 className="listing-tile__title">{plate}</h3>
+        <div className="listing-tile__condition-tag">
+          <ListingTag label={advert_classification} isCondition />
+        </div>
+        <div className="listing-tile__details">
+          <div className="listing-tile__tags">
+            {/* Assuming there would be an array of tags to be used in prod. */}
+            {/* A ListingTags component would be built. */}
+            {/* Chose to display a few predetermined props for visibility. */}
+            <ListingTag label={fuel_type} />
+            <ListingTag label={transmission} />
+            <ListingTag label={`${seats} seats`} />
+          </div>
+          <VehiclePrice
+            price={price}
+            original_price={original_price ? original_price : ""}
+            finance={finance}
+            monthly_payment={monthly_payment}
+            slug={slug}
+          />
+        </div>
       </div>
-      <VehiclePrice
-        price={price}
-        original_price={original_price ? original_price : ""}
-        finance={finance}
-        monthly_payment={monthly_payment}
-        slug={slug}
-      />
     </div>
   );
 };

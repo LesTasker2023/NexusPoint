@@ -108,6 +108,7 @@ export interface VehicleCard {
   monthly_payment: string;
   finance: string;
   slug: string;
+  seats: string;
 }
 
 export interface Price {
