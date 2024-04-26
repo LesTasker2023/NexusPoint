@@ -1,0 +1,20 @@
+@import "../../utils/styles/mixins";
+
+.button {
+  display: none;
+  @include mq-desktop {
+    color: $white;
+    display: flex;
+    padding: 12px 25px;
+    border-radius: 16px;
+    font-size: 16px;
+    font-weight: 600;
+    text-align: center;
+  }
+  &--primary {
+    background-color: $primary;
+  }
+  &--secondary {
+    background-color: $secondary;
+  }
+}
