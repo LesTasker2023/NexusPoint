@@ -27,7 +27,6 @@ export const ListingTile = ({
 
   const handleClick = () => {
     setIsFavourite(!isFavourite);
-    // set context / update redux here for a persistant favourites list
   };
   return (
     <div className="listing-tile">

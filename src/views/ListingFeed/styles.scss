@@ -3,6 +3,7 @@
 .listing-feed {
   display: flex;
   flex-direction: column;
+  padding: 20px;
   @include mq-tablet {
     display: grid;
     max-width: fit-content;

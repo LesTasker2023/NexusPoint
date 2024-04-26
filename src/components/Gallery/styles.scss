@@ -21,18 +21,6 @@
       min-width: 375px;
       height: 250px;
       border-radius: 16px 16px 0 0;
-      &::after {
-        content: "";
-        position: absolute;
-        top: 0;
-        right: 0;
-        left: 0;
-        height: 70px;
-        width: 100%;
-        z-index: 991;
-
-        background-color: red;
-      }
     }
   }
   &__progress {
