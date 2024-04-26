@@ -59,7 +59,7 @@ export const ListingTile = ({
             price={price}
             original_price={original_price ? original_price : ""}
             finance={finance}
-            monthly_payment={monthly_payment}
+            monthly_payment={(parseInt(price) / 48).toFixed(2).toString()}
             slug={slug}
           />
           <img

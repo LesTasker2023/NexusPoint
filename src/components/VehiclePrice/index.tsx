@@ -9,6 +9,7 @@ export const VehiclePrice = ({
   monthly_payment,
   slug,
 }: Price) => {
+  console.log("🚀 ~ monthly_payment:", monthly_payment);
   return (
     <div className="vehicle-price">
       {finance && (
