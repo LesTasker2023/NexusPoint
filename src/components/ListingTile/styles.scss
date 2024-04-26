@@ -25,6 +25,10 @@
         padding: 10px;
       }
     }
+    &-header {
+      display: flex;
+      justify-content: space-between;
+    }
   }
   &__condition-tag {
     @include mq-tablet {
@@ -36,11 +40,11 @@
   &__tags {
     display: flex;
     flex-wrap: wrap;
+    gap: 5px;
     @include mq-tablet {
       position: absolute;
       top: 220px;
       left: 10px;
-      gap: 5px;
     }
   }
 }

@@ -1,4 +1,5 @@
 import { Price } from "../../types/vehicle-props";
+import { Button } from "../Button";
 import "./styles.scss";
 
 export const VehiclePrice = ({
@@ -31,12 +32,15 @@ export const VehiclePrice = ({
           <p className="vehicle-price__original-value">£{original_price}</p>
         )}
         {finance && (
-          <a
-            href={`/finance-calulator?vehicle=${slug}`}
-            className="vehicle-price__calculate-finance"
-          >
-            Calculate finance
-          </a>
+          <>
+            <a
+              href={`/finance-calulator?vehicle=${slug}`}
+              className="vehicle-price__calculate-finance"
+            >
+              Calculate finance
+            </a>
+            <Button label={"View"} theme="primary" />
+          </>
         )}
       </div>
     </div>

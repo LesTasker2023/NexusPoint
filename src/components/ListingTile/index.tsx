@@ -27,10 +27,13 @@ export const ListingTile = ({
     <div className="listing-tile">
       {images.length > 0 && <Gallery make={make} images={images} />}
       <div className="listing-tile__details-container">
-        <h3 className="listing-tile__title">{plate}</h3>
-        <div className="listing-tile__condition-tag">
-          <ListingTag label={advert_classification} isCondition />
+        <div className="listing-tile__details-header">
+          <h3 className="listing-tile__title">{plate}</h3>
+          <div className="listing-tile__condition-tag">
+            <ListingTag label={advert_classification} isCondition />
+          </div>
         </div>
+
         <div className="listing-tile__details">
           <div className="listing-tile__tags">
             {/* Assuming there would be an array of tags to be used in prod. */}
