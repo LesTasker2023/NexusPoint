@@ -1,0 +1,22 @@
+@import "../../utils/styles/mixins";
+
+.button {
+  display: none;
+  @include mq-tablet {
+    border: none;
+    color: $white;
+    display: flex;
+    padding: 12px 25px;
+    border-radius: 16px;
+    font-size: 16px;
+    font-weight: 400;
+    text-align: center;
+    @include clickable;
+  }
+  &--primary {
+    background-color: $primary;
+  }
+  &--secondary {
+    background-color: $secondary;
+  }
+}

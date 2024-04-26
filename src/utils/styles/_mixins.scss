@@ -1,0 +1,30 @@
+@import "./variables";
+@mixin mq-tablet {
+  @media (min-width: 768px) {
+    @content;
+  }
+}
+@mixin mq-desktop {
+  @media (min-width: 1440px) {
+    @content;
+  }
+}
+@mixin common-tag-style {
+  color: $white;
+  text-transform: capitalize;
+  background-color: $np-grey;
+  border: 1px solid $np-border-grey;
+  border-radius: 8px;
+  padding: 1px 10px 1px 10px;
+}
+
+@mixin clickable {
+  cursor: pointer;
+  transition: 0.3s all ease;
+  &:hover {
+    transform: scale(1.05);
+  }
+  &:active {
+    transform: scale(1);
+  }
+}

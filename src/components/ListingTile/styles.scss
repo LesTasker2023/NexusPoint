@@ -1,0 +1,91 @@
+@import "../../utils/styles/mixins";
+
+.listing-tile {
+  position: relative;
+
+  @include mq-tablet {
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0px 6px 25px 0px #00000026;
+
+    width: 375px;
+  }
+  &__details {
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+    &-container {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      position: relative;
+      height: 127px;
+      padding: 20px;
+      @include mq-tablet {
+        position: initial;
+        height: 114px;
+        padding: 10px;
+      }
+    }
+    &-header {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+  }
+  &__title {
+    display: flex;
+    gap: 5px;
+
+    span {
+      font-size: 14px;
+      line-height: 21px;
+      font-weight: 400;
+      color: $black;
+      @include mq-tablet {
+        font-size: 16px;
+        line-height: 24px;
+      }
+    }
+  }
+  &__sub-title {
+    display: flex;
+    gap: 5px;
+  }
+
+  &__condition-tag {
+    position: absolute;
+    right: 40px;
+
+    @include mq-tablet {
+      top: 10px;
+      left: 10px;
+    }
+  }
+  &__tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    width: 40%;
+    @include mq-tablet {
+      position: absolute;
+      width: auto;
+      bottom: 125px;
+      left: 10px;
+      right: 10px;
+    }
+  }
+  &__favourite {
+    cursor: pointer;
+    width: 22px;
+    display: flex;
+    position: absolute;
+    bottom: 85px;
+    right: 10px;
+    justify-content: center;
+    align-items: center;
+    @include mq-tablet {
+      bottom: 80px;
+    }
+  }
+}

@@ -1,0 +1,60 @@
+@import "../../utils/styles/mixins";
+
+.vehicle-price {
+  display: flex;
+  flex-direction: column;
+
+  &__finance-details {
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+  }
+  &__finance-type {
+    line-height: 26px;
+    font-weight: 700;
+    @include mq-tablet {
+    }
+  }
+  &__price-tag {
+    display: flex;
+    gap: 8px;
+  }
+  &__value {
+    &--discount {
+      color: $np-red;
+    }
+  }
+  &__original-value {
+    text-decoration: line-through;
+    color: $np-light-grey;
+  }
+  &__monthly-payment {
+    font-size: 14px;
+    line-height: 21px;
+    font-weight: 700;
+    color: $black;
+    span {
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 21px;
+      margin-left: 5px;
+    }
+    @include mq-tablet {
+      font-size: 18px;
+      line-height: 24px;
+    }
+  }
+  &__calculate-finance {
+    display: none;
+    @include mq-tablet {
+      display: flex;
+      cursor: pointer;
+      color: $secondary;
+    }
+  }
+  &__view-button {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+  }
+}

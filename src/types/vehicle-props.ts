@@ -6,20 +6,19 @@ export interface Vehicle {
   card_guid: number;
   admin_fee: string;
   attention_grabber: string;
-  battery_kwh: null;
-  battery_warranty_miles: null;
-  battery_warranty_years: null;
+  battery_kwh: string | null;
+  battery_warranty_miles: string | null;
+  battery_warranty_years: string | null;
   body_type: string;
   body_type_slug: string;
   co2: number;
   connector_type: string;
   mpg: number;
   cap_database: string;
-  'coin-series': string;
+  "coin-series": string;
   colour: string;
   condition: string;
   contents: unknown[];
-  compunknown: string;
   date_first_advertised: string;
   date_first_registered: string;
   date_mot_expires: string;
@@ -28,7 +27,7 @@ export interface Vehicle {
   doors: string;
   drivetrain: string;
   engine_size: string;
-  euro_emissions_standard: null;
+  euro_emissions_standard: string | null;
   extra_description: string;
   fuel_type: string;
   fuel_type_slug: string;
@@ -37,12 +36,12 @@ export interface Vehicle {
   location_slug: string;
   make: string;
   make_slug: string;
-  manufacturer_colour: null;
+  manufacturer_colour: string | null;
   meta_description: string;
   meta_keywords: string;
   meta_title: string;
   model: string;
-  model_year: null;
+  model_year: string | null;
   name: string;
   odometer_units: string;
   odometer_value: number;
@@ -52,23 +51,23 @@ export interface Vehicle {
   price: string;
   price_ex_vat: string;
   price_excluding_vat: string;
-  price_when_new: null;
+  price_when_new: string | null;
   range: string;
   range_slug: string;
-  range_wltp: null;
+  range_wltp: string | null;
   reserved: string;
   seats: string;
-  service_history: null;
+  service_history: string | null;
   site: string;
   site_slug: string;
   slug: string;
-  standard_equipment: Standardequipment;
+  standard_equipment: StandardEquipment;
   status: string;
   stock_id: string;
   tags: unknown[];
   tax_rate_value: string;
-  technical_data: Technicaldata;
-  template_slug: null;
+  technical_data: TechnicalData;
+  template_slug: string | null;
   transmission: string;
   vat: string;
   vat_scheme: string;
@@ -77,15 +76,14 @@ export interface Vehicle {
   vrm: string;
   website_url: string;
   year: string;
-  media_urls: Mediaurl[];
+  media_urls: MediaUrl[];
   original_media_urls: string[];
-  finance: null;
-  monthly_payment: null;
+  finance: string;
+  monthly_payment: string;
   feature_classification: unknown[][];
   extra_offers: unknown[];
-  wheelchair_aTechnicalPropertyess: number;
-  electric_data: null;
-  battery_usable_capacity_kwh: string;
+  electric_data: string | null;
+  battery_usable_capacity_kwh: string | number | null;
   charge_times: string;
   price_indicator: string;
   ulez_compliant: boolean;
@@ -93,7 +91,34 @@ export interface Vehicle {
   vehicle_source: string;
 }
 
-export interface Mediaurl {
+export interface VehicleCard {
+  name: string;
+  plate: string;
+  make: string;
+  model: string;
+  derivative: string;
+  advert_classification: string;
+  fuel_type: string;
+  transmission: string;
+  media_urls: MediaUrl[];
+  price: string;
+  original_price: string;
+  monthly_payment: string;
+  finance: string;
+  slug: string;
+  seats: string;
+  stockId: string;
+}
+
+export interface Price {
+  price: string;
+  original_price: string;
+  monthly_payment: string;
+  finance: string;
+  slug: string;
+}
+
+export interface MediaUrl {
   meta: unknown[];
   large: string;
   thumb: string;
@@ -102,30 +127,29 @@ export interface Mediaurl {
   original: string;
 }
 
-export interface Technicaldata {
-  TechnicalProperty: TechnicalProperty;
+export interface TechnicalData {
   width: TechnicalProperty;
   height: TechnicalProperty;
   length: TechnicalProperty;
-  'co2-gkm': TechnicalProperty;
+  "co2-gkm": TechnicalProperty;
   cylinders: TechnicalProperty;
-  'top-speed': TechnicalProperty;
-  'coin-series': TechnicalProperty;
-  'no-of-seats': TechnicalProperty;
-  'ec-urban-mpg': TechnicalProperty;
+  "top-speed": TechnicalProperty;
+  "coin-series": TechnicalProperty;
+  "no-of-seats": TechnicalProperty;
+  "ec-urban-mpg": TechnicalProperty;
   transmission: TechnicalProperty;
-  'ec-combined-mpg': TechnicalProperty;
-  '0-to-60-mph-secs': TechnicalProperty;
-  'engine-power-bhp': TechnicalProperty;
-  'insurance-group-2': TechnicalProperty;
-  'badge-power-litres': TechnicalProperty;
-  'ec-extra-urban-mpg': TechnicalProperty;
-  'standard-euro-emissions': TechnicalProperty;
-  'fuel-tank-capacity-litres': TechnicalProperty;
-  'luggage-capacity-seats-up': TechnicalProperty;
-  'luggage-capacity-seats-down': TechnicalProperty;
-  'ec-directive-1999100ec-applies': TechnicalProperty;
-  'insurance-group-1-50-effective-january-07': TechnicalProperty;
+  "ec-combined-mpg": TechnicalProperty;
+  "0-to-60-mph-secs": TechnicalProperty;
+  "engine-power-bhp": TechnicalProperty;
+  "insurance-group-2": TechnicalProperty;
+  "badge-power-litres": TechnicalProperty;
+  "ec-extra-urban-mpg": TechnicalProperty;
+  "standard-euro-emissions": TechnicalProperty;
+  "fuel-tank-capacity-litres": TechnicalProperty;
+  "luggage-capacity-seats-up": TechnicalProperty;
+  "luggage-capacity-seats-down": TechnicalProperty;
+  "ec-directive-1999100ec-applies": TechnicalProperty;
+  "insurance-group-1-50-effective-january-07": TechnicalProperty;
 }
 
 export interface TechnicalProperty {
@@ -134,6 +158,10 @@ export interface TechnicalProperty {
   category: string;
 }
 
-export interface Standardequipment {
+export interface StandardEquipment {
   Standard: string[];
+}
+
+export interface MockResponse {
+  data: Vehicle[];
 }

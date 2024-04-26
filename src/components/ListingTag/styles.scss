@@ -1,0 +1,19 @@
+@import "../../utils/styles/mixins";
+
+.listing-tag {
+  text-align: center;
+  line-height: 18px;
+  font-weight: 400;
+  width: fit-content;
+  color: $np-light-grey;
+  @include mq-tablet {
+    @include common-tag-style();
+  }
+  &--featured {
+    @include common-tag-style();
+    @include mq-tablet {
+      font-size: 16px;
+      line-height: 27px;
+    }
+  }
+}
