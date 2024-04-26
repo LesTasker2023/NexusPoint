@@ -29,8 +29,8 @@
     color: $np-light-grey;
   }
   &__monthly-payment {
-    font-size: 18px;
-    line-height: 24px;
+    font-size: 14px;
+    line-height: 21px;
     font-weight: 700;
     color: $black;
     span {
@@ -38,6 +38,10 @@
       font-weight: 400;
       line-height: 21px;
       margin-left: 5px;
+    }
+    @include mq-tablet {
+      font-size: 18px;
+      line-height: 24px;
     }
   }
   &__calculate-finance {
@@ -47,5 +51,10 @@
       cursor: pointer;
       color: $secondary;
     }
+  }
+  &__view-button {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
   }
 }

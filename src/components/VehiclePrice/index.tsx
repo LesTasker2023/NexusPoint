@@ -32,16 +32,19 @@ export const VehiclePrice = ({
           <p className="vehicle-price__original-value">£{original_price}</p>
         )}
         {finance && (
-          <>
-            <a
-              href={`/finance-calulator?vehicle=${slug}`}
-              className="vehicle-price__calculate-finance"
-            >
-              Calculate finance
-            </a>
-            <Button label={"View"} theme="primary" />
-          </>
+          <a
+            href={`/finance-calulator?vehicle=${slug}`}
+            className="vehicle-price__calculate-finance"
+          >
+            Calculate finance
+          </a>
         )}
+        <div
+          onClick={() => alert(`Redirect to:  /${slug}`)}
+          className="vehicle-price__view-button"
+        >
+          <Button label={"View"} theme="secondary" />
+        </div>
       </div>
     </div>
   );

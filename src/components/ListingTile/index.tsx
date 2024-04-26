@@ -1,4 +1,5 @@
 // #todo add alias in tsconfig
+import { useState } from "react";
 import { VehicleCard } from "../../types/vehicle-props";
 import Gallery from "../Gallery";
 import { ListingTag } from "../ListingTag";
@@ -23,12 +24,23 @@ export const ListingTile = ({
   seats,
 }: VehicleCard) => {
   const images = media_urls.map((item) => item.thumb);
+  const [isFavourite, setIsFavourite] = useState<boolean>(false);
+
+  const handleClick = () => {
+    setIsFavourite(!isFavourite);
+    // set context / update redux here for a persistant favourites list
+  };
   return (
     <div className="listing-tile">
       {images.length > 0 && <Gallery make={make} images={images} />}
       <div className="listing-tile__details-container">
         <div className="listing-tile__details-header">
-          <h3 className="listing-tile__title">{plate}</h3>
+          <h3 className="listing-tile__title">
+            <span>{plate}</span>
+            <span>{make}</span>
+            <span>{model}</span>
+          </h3>
+          <p className="listing-tile__sub-title">{derivative}</p>
           <div className="listing-tile__condition-tag">
             <ListingTag label={advert_classification} isCondition />
           </div>
@@ -49,6 +61,18 @@ export const ListingTile = ({
             finance={finance}
             monthly_payment={monthly_payment}
             slug={slug}
+          />
+          <img
+            src={
+              !isFavourite
+                ? "/assets/icons/favourite-star.png"
+                : "/assets/icons/favourite-star-filled.png"
+            }
+            onClick={handleClick}
+            alt="Set Favourite"
+            title="Set Favourite"
+            aria-label="Set Favourite"
+            className="listing-tile__favourite"
           />
         </div>
       </div>

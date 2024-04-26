@@ -17,3 +17,14 @@
   border-radius: 8px;
   padding: 1px 10px 1px 10px;
 }
+
+@mixin clickable {
+  cursor: pointer;
+  transition: 0.3s all ease;
+  &:hover {
+    transform: scale(1.05);
+  }
+  &:active {
+    transform: scale(1);
+  }
+}

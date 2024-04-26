@@ -48,5 +48,6 @@
     &--next {
       background-image: url("../../../public/assets/icons/chevron-right.png");
     }
+    @include clickable;
   }
 }
