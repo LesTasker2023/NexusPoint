@@ -4,10 +4,16 @@ import "./styles.scss";
 interface GalleryProps {
   images: string[];
   make: string;
+  stockId: string;
 }
 
-const GalleryImage = (image: string, make: string, id: number) => {
-  const imageId = `image-${id}`;
+const GalleryImage = (
+  image: string,
+  make: string,
+  id: number,
+  stockId: string
+) => {
+  const imageId = `image-${stockId}-${id}`;
   if (image) {
     return (
       <img
@@ -29,7 +35,7 @@ const GalleryImage = (image: string, make: string, id: number) => {
   return null;
 };
 
-const Gallery = ({ images, make }: GalleryProps) => {
+const Gallery = ({ images, make, stockId }: GalleryProps) => {
   const [activeImage, setActiveImage] = useState<number>(1);
   const totalImages = images.length;
 
@@ -42,9 +48,15 @@ const Gallery = ({ images, make }: GalleryProps) => {
   };
 
   useEffect(() => {
-    const targetActiveImage = document.getElementById(`image-${activeImage}`);
+    const targetActiveImage = document.getElementById(
+      `image-${stockId}-${activeImage}`
+    );
     if (targetActiveImage !== null) {
-      targetActiveImage.scrollIntoView();
+      targetActiveImage.scrollIntoView({
+        behavior: "smooth",
+        block: "nearest",
+        inline: "start",
+      });
     }
   }, [activeImage]);
 
@@ -57,6 +69,9 @@ const Gallery = ({ images, make }: GalleryProps) => {
         className="gallery"
       >
         <div className="gallery__controls">
+          <span className="gallery__progress">
+            {activeImage} of {totalImages}
+          </span>
           <button
             className="gallery__button gallery__button--previous"
             onClick={() => handleClick("previous")}
@@ -67,7 +82,9 @@ const Gallery = ({ images, make }: GalleryProps) => {
           ></button>
         </div>
 
-        {images.map((image, index) => GalleryImage(image, make, index + 1))}
+        {images.map((image, index) =>
+          GalleryImage(image, make, index + 1, stockId)
+        )}
       </div>
     );
   }

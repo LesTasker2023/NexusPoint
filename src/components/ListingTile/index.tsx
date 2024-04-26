@@ -11,7 +11,6 @@ export const ListingTile = ({
   plate,
   make,
   model,
-  derivative,
   advert_classification,
   fuel_type,
   transmission,
@@ -19,9 +18,9 @@ export const ListingTile = ({
   price,
   original_price,
   finance,
-  monthly_payment,
   slug,
   seats,
+  stockId,
 }: VehicleCard) => {
   const images = media_urls.map((item) => item.thumb);
   const [isFavourite, setIsFavourite] = useState<boolean>(false);
@@ -32,7 +31,9 @@ export const ListingTile = ({
   };
   return (
     <div className="listing-tile">
-      {images.length > 0 && <Gallery make={make} images={images} />}
+      {images.length > 0 && (
+        <Gallery make={make} images={images} stockId={stockId} />
+      )}
       <div className="listing-tile__details-container">
         <div className="listing-tile__details-header">
           <h3 className="listing-tile__title">
@@ -40,7 +41,12 @@ export const ListingTile = ({
             <span>{make}</span>
             <span>{model}</span>
           </h3>
-          <p className="listing-tile__sub-title">{derivative}</p>
+          <p className="listing-tile__sub-title">
+            <span>{make}</span>
+            <span>{model}</span>
+            <span>{fuel_type}</span>
+            <span>{transmission}</span>
+          </p>
           <div className="listing-tile__condition-tag">
             <ListingTag label={advert_classification} isCondition />
           </div>

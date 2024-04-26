@@ -12,7 +12,7 @@ export const ListingFeed = ({ data }: MockResponse) => {
       <>
         <div className="listing-feed">
           {vehicleList.map((vehicle) => {
-            return <ListingTile {...vehicle} />;
+            return <ListingTile {...vehicle} stockId={vehicle.stock_id} />;
           })}
         </div>
       </>

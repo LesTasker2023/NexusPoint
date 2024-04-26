@@ -48,6 +48,10 @@
       }
     }
   }
+  &__sub-title {
+    display: flex;
+    gap: 5px;
+  }
 
   &__condition-tag {
     position: absolute;

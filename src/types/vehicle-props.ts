@@ -107,6 +107,7 @@ export interface VehicleCard {
   finance: string;
   slug: string;
   seats: string;
+  stockId: string;
 }
 
 export interface Price {
