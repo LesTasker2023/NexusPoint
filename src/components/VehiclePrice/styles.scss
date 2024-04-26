@@ -1,3 +1,36 @@
-.price {
+@import "../../utils/styles/mixins";
+
+.vehicle-price {
   display: flex;
+  flex-direction: column;
+
+  &__finance-details {
+    display: flex;
+    flex-direction: row;
+  }
+  &__finance-type {
+    line-height: 26px;
+  }
+  &__price-tag {
+    display: flex;
+  }
+  &__value {
+    &--discount {
+      color: $np-red;
+    }
+  }
+  &__original-value {
+    text-decoration: line-through;
+    color: $np-light-grey;
+  }
+  &__monthly-payment {
+    font-size: 18px;
+    line-height: 24px;
+    font-weight: 700;
+    span {
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 21px;
+    }
+  }
 }

@@ -12,13 +12,24 @@ export const VehiclePrice = ({
     <div className="vehicle-price">
       {finance && (
         <div className="vehicle-price__finance-details">
-          <p className="vehicle-price__monthly-payment">{monthly_payment}</p>
+          <p className="vehicle-price__monthly-payment">
+            £{monthly_payment}
+            <span>/mo</span>
+          </p>
           <p className="vehicle-price__finance-type">{finance}</p>
         </div>
       )}
       <div className="vehicle-price__price-tag">
-        <p className="vehicle-price__value">{price}</p>
-        <p className="vehicle-price__original-value">{original_price}</p>
+        <p
+          className={`vehicle-price__value ${
+            price === original_price ? "vehicle-price__value--discount" : ""
+          }`}
+        >
+          £{price}
+        </p>
+        {price === original_price && (
+          <p className="vehicle-price__original-value">£{original_price}</p>
+        )}
         {finance && (
           <a
             href={`/finance-calulator?vehicle=${slug}`}
