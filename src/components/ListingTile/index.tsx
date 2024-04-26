@@ -23,14 +23,20 @@ export const ListingTile = ({
   const images = media_urls.map((item) => item.thumb);
   return (
     <div className="listing-tile">
-      {name} {plate} {make} {model}
       {images.length > 0 && <Gallery make={make} images={images} />}
+      <h3 className="listing-tile__title">{plate}</h3>
       <ListingTag label={advert_classification} isCondition />
-      <ListingTag label={advert_classification} />
-      <ListingTag label={advert_classification} />
-      <ListingTag label={advert_classification} />
-      <ListingTag label={advert_classification} />
-      <ListingTag label={advert_classification} />
+      <div className="listing-tile__tags">
+        {/*
+         Assuming there would be an array of tags to be used in prod.
+         A ListingTags component would be built.
+         Chose to display a few predetermined props for visibility.
+        */}
+        <ListingTag label={advert_classification} />
+        <ListingTag label={advert_classification} />
+        <ListingTag label={advert_classification} />
+        <ListingTag label={advert_classification} />
+      </div>
       <VehiclePrice
         price={price}
         original_price={original_price ? original_price : ""}

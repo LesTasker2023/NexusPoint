@@ -1,2 +1,8 @@
-.card {
+@import "../../utils/styles/mixins";
+
+.listing-tile {
+  position: relative;
+  @include mq-tablet {
+    width: 375px;
+  }
 }
